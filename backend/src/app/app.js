@@ -7,8 +7,14 @@ import { DB_NAME } from "./constants.js";
 import mongoose from "mongoose";
 import { createChat, getAllChats, rewriteQuery, sendMessage, fetchMessages } from '../controllers/chat.controller.js';
 import path from 'path';
-import 'dotenv/config'
+import 'dotenv/config';
 import { generateThumbnail } from "../../generateImage.js";
+
+// dotenv.config();
+
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: "./.env" });
+}
 
 const app = express();
 app.use(cors({
