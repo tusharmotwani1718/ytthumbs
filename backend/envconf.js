@@ -5,11 +5,11 @@ import { fileURLToPath } from 'url';
 
 // Enable __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
-const _dirname = path.dirname(_filename);
+const _dirname = path.dirname(__filename);
 
 // Load .env only if running locally (not in Render)
 if (process.env.NODE_ENV !== 'production') {
-  dotenv.config({ path: path.join(__dirname, '.env') });
+  dotenv.config({ path: path.join(_dirname, '.env') });
 } else {
   dotenv.config(); // fallback: use Render-injected vars
 }
