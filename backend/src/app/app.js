@@ -95,13 +95,16 @@ app.post("/api/chats/generateImage", async (req, res) => {
     }
 });
 
+
+
 async function startServer() {
     try {
+        const port = process.env.PORT || envconf.backendPort || 5000
         await mongoose.connect(`${envconf.mongoDBuri}/${DB_NAME}`);
         console.log(`Connected to database: ${DB_NAME}`);
 
-        app.listen(envconf.backendPort, () => {
-            console.log(`App is listening at port: ${envconf.backendPort}`);
+        app.listen(port, () => {
+            console.log(`App is listening at port: ${port}`);
         });
     } catch (error) {
         console.error("Error connecting to the database:", error);
