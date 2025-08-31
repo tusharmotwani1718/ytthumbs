@@ -10,6 +10,7 @@ import path from 'path';
 import 'dotenv/config';
 import { generateThumbnail } from "../../generateImage.js";
 import dotenv from "dotenv";
+import session from "express-session";
 
 // dotenv.config();
 
