@@ -17,6 +17,19 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
+app.use(
+  session({
+    secret: "super_secret_key", // change in production
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      secure: false, // true if https
+      httpOnly: true,
+      sameSite: "lax",
+    },
+  })
+);
+
 app.use(express.json());
 app.use(express.static(path.join(process.cwd(), "public")));
 
