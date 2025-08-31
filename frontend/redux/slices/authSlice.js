@@ -17,7 +17,7 @@ export const fetchChats = createAsyncThunk(
   "auth/fetchChats",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://localhost:3001/api/chats/getAllChats");
+      const response = await axios.get("https://ytthumbs.onrender.com/api/chats/getAllChats");
       return response.data.chats;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || "Failed to fetch chats");
@@ -30,7 +30,7 @@ export const createNewChat = createAsyncThunk(
   "auth/createNewChat",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.post("http://localhost:3001/api/chats/createNewChat");
+      const response = await axios.post("https://ytthumbs.onrender.com/api/chats/createNewChat");
       return response.data.chat;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || "Failed to create chat");
@@ -44,7 +44,7 @@ export const fetchMessages = createAsyncThunk(
   "auth/fetchMessages",
   async (chatId, { rejectWithValue }) => {
     try {
-      const res = await axios.get(`http://localhost:3001/api/chats/fetchMessages/${chatId}`);
+      const res = await axios.get(`https://ytthumbs.onrender.com/api/chats/fetchMessages/${chatId}`);
       return { chatId, conversation: res.data.messages || [] };
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || "Failed to fetch messages");

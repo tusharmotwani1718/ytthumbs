@@ -296,7 +296,7 @@ export default function Chats() {
 
     try {
       // API call to update chat name (you'll need to implement this endpoint)
-      await axios.put(`http://localhost:3001/api/chats/${chatId}`, {
+      await axios.put(`https://ytthumbs.onrender.com/api/chats/${chatId}`, {
         chatName: editedName.trim()
       });
 
@@ -332,7 +332,7 @@ export default function Chats() {
     if (!newMessage.trim() || !chatId || sending) return;
     setSending(true);
     try {
-      const res = await axios.post("http://localhost:3001/api/chats/sendMessage", { chatId, role: "user", message: newMessage });
+      const res = await axios.post("https://ytthumbs.onrender.com/api/chats/sendMessage", { chatId, role: "user", message: newMessage });
       dispatch(addMessageInChat({ chatId, message: res.data.message }));
       setNewMessage("");
     } catch (err) {
@@ -359,7 +359,7 @@ export default function Chats() {
     try {
       const formData = new FormData();
       formData.append("image", file);
-      const res = await axios.post("http://localhost:3001/api/upload", formData, {
+      const res = await axios.post("https://ytthumbs.onrender.com/api/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
@@ -383,7 +383,7 @@ export default function Chats() {
 
     try {
       // 1️⃣ Generate enhanced query
-      const promptRes = await axios.post("http://localhost:3001/api/chats/enhanceQuery", { details: answers });
+      const promptRes = await axios.post("https://ytthumbs.onrender.com/api/chats/enhanceQuery", { details: answers });
       const generatedPrompt = promptRes.data.enhancedQuery;
 
       // 2️⃣ Append user message
@@ -394,12 +394,12 @@ export default function Chats() {
         model: "openai",
       };
 
-      await axios.post("http://localhost:3001/api/chats/sendMessage", { chatId, ...userMessage });
+      await axios.post("https://ytthumbs.onrender.com/api/chats/sendMessage", { chatId, ...userMessage });
       dispatch(addMessageInChat({ chatId, message: userMessage }));
 
       // 3️⃣ Generate thumbnail via dedicated route
       setGeneratingThumbnail(true);
-      const thumbnailRes = await axios.post("http://localhost:3001/api/chats/generateImage", {
+      const thumbnailRes = await axios.post("https://ytthumbs.onrender.com/api/chats/generateImage", {
         imageUrl: uploadedImage,
         promptText: generatedPrompt,
       });
@@ -414,7 +414,7 @@ export default function Chats() {
         model: "nano banana",
       };
 
-      await axios.post("http://localhost:3001/api/chats/sendMessage", { chatId, ...botMessage });
+      await axios.post("https://ytthumbs.onrender.com/api/chats/sendMessage", { chatId, ...botMessage });
       dispatch(addMessageInChat({ chatId, message: botMessage }));
 
       // 5️⃣ Reset
