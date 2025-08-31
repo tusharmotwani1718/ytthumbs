@@ -9,6 +9,7 @@ import { createChat, getAllChats, rewriteQuery, sendMessage, fetchMessages } fro
 import path from 'path';
 import 'dotenv/config';
 import { generateThumbnail } from "../../generateImage.js";
+import dotenv from "dotenv";
 
 // dotenv.config();
 
