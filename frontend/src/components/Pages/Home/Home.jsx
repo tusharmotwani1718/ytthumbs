@@ -5,16 +5,16 @@ import { ArrowRight, Zap, TrendingUp, Users, Play } from "lucide-react";
 // Using 6 duplicated examples for demo purposes, adjust as needed!
 const exampleThumbnails = [
   {
-    before: "images/hc.png",
-    after: "images/edited.png"
+    before: "https://res.cloudinary.com/dzhfpcjwv/image/upload/v1756638371/yt_thumbnail_maker/akxhbzn03y85wos9sy39.png",
+    after: "https://res.cloudinary.com/dzhfpcjwv/image/upload/v1756636244/yt_thumbnail_maker/edited_bs5f9y.png"
   },
   {
-    before: "images/sg.png",
-    after: "images/edited_sg.png"
+    before: "https://res.cloudinary.com/dzhfpcjwv/image/upload/v1756638890/yt_thumbnail_maker/ecrjt9ujhctnhlgf6i1y.png",
+    after: "https://res.cloudinary.com/dzhfpcjwv/image/upload/v1756636632/yt_thumbnail_maker/edited_n1mcea.png"
   },
   {
-    before: "images/pg.webp",
-    after: "images/pg_enhanced.png"
+    before: "https://res.cloudinary.com/dzhfpcjwv/image/upload/v1756639800/yt_thumbnail_maker/sjcz95bpdg9wirmdlgqk.png",
+    after: "https://res.cloudinary.com/dzhfpcjwv/image/upload/v1756640234/yt_thumbnail_maker/edited_hnellq.png"
   }
 ]
 
