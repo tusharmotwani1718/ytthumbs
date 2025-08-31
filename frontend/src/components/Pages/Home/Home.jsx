@@ -5,16 +5,16 @@ import { ArrowRight, Zap, TrendingUp, Users, Play } from "lucide-react";
 // Using 6 duplicated examples for demo purposes, adjust as needed!
 const exampleThumbnails = [
   {
-    before: "/images/hc.png",
-    after: "/images/edited.png"
+    before: "images/hc.png",
+    after: "images/edited.png"
   },
   {
-    before: "/images/sg.png",
-    after: "/images/edited_sg.png"
+    before: "images/sg.png",
+    after: "images/edited_sg.png"
   },
   {
-    before: "/images/pg.webp",
-    after: "/images/pg_enhanced.png"
+    before: "images/pg.webp",
+    after: "images/pg_enhanced.png"
   }
 ]
 
