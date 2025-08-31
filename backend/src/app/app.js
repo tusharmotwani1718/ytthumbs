@@ -20,7 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:5173', // React dev server URL
+    origin: 'https://ytthumbs-gamma.vercel.app', // React dev server URL
     methods: ['GET', 'POST'],
     allowedHeaders: ['Content-Type', 'Authorization'],
 }));
